@@ -1,0 +1,11 @@
+{%extends "layout.html"%}
+{%block body%}
+{% if error %}<p class="error"><strong>Error:</strong> {{ error }}{% endif %}
+{% for item in results %}
+	<div class="row well">
+        	<div class="col-md-3">
+        <img src={{item[4]}} width="150" height="120"></img></div>
+        <div class="col-md-9"><b>{{item[1]}}</b><br><li>{{item[2]}}</li></div></div>
+        <br>
+{% endfor %}
+{% endblock %}

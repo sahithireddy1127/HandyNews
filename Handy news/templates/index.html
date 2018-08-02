@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Handy News</title>
+  <meta charset="utf-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="google-signin-client_id" content="745453099273-lfitga2abrf146r1h5qpmedhcka84q2b.apps.googleusercontent.com">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.1/css/font-awesome.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="https://apis.google.com/js/platform.js" async defer></script>
+   <script src="https://apis.google.com/js/platform.js?onload=onLoad" async defer></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/themes/smoothness/jquery-ui.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/jquery-ui.min.js"></script>
+<script type='text/javascript' src='//platform-api.sharethis.com/js/sharethis.js#property=5b17df3d74ac940011c15557&product=sticky-share-buttons' async='async'></script>
+
+
+
+  <style type="text/css">
+      body{
+        background: white;
+      }
+      input[type=text] {
+    width: 130px;
+    box-sizing: border-box;
+    border: 2px white;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: white;,
+    background-image: url('searchicon.png');
+    background-position: 10px 10px;
+    background-repeat: no-repeat;
+    padding: 12px 20px 12px 40px;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+}
+
+input[type=text]:focus {
+    width: 100%;
+}
+
+    .dp{
+      width: 40%;
+      height: 179px;
+    }
+
+    .item{
+      margin-bottom: 5%;
+    }
+    bi{
+        font-style: bold;
+        background-color: white;
+        color: black;
+        border: 2px solid black;
+        padding-left: 50px;
+        padding-right: 50px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        border-radius: 50px 20px;
+      }
+      .btn-lg:hover{
+        background-color: #A9F18A;
+      }
+      #search input {
+
+    background-position: 10px 10px;
+    border: 2px white;
+    color: black;
+    float: left;
+    font: 12px 'Helvetica','Lucida Sans Unicode','Lucida Grande',sans-serif;
+    height: 40px;
+    padding: 10px;
+    transition: background 0.3s ease-in-out 0s;
+    width: 300px;
+  }
+  #search button {
+
+
+    height: 40px;
+
+
+    width: 80px;
+
+
+  }
+
+.btn{
+  background-color: white;
+  color: black;
+  border: solid black;
+}
+.btn:hover{
+  color: grey;
+}
+
+ /* #search button:hover {
+    background-color:#fff;
+  }*/
+.navbar{
+  background-color: black;
+  border: transparent;
+  color: white;
+}
+
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+}
+
+.topnav a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.main{
+   padding: 16px;
+  margin-top: 30px;
+  height: 500px;
+}
+
+.active {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.topnav .icon {
+  display: none;
+}
+
+@media screen and (max-width: 600px) {
+  .topnav a:not(:first-child) {display: none;}
+  .topnav a.icon {
+    float: right;
+    display: block;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .topnav.responsive {position: relative;}
+  .topnav.responsive .icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .topnav.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+}
+
+.zoom:hover {
+ background-color: #A9F18A;
+   transform: scale(1.5); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+}
+
+
+
+</style>
+</head>
+<body onload="onLoad()">
+   <center>
+<script type="text/javascript"><!--
+google_ad_client = "ca-pub-5104998679826243";
+/* mysite_indivi */
+google_ad_slot = "0527018651";
+google_ad_width = 728;
+google_ad_height = 90;
+//-->
+</script>
+
+</center>
+
+
+
+  <div class="row">
+    <nav class="navbar navbar-inverse" role="navigation" style="padding-right: 8px;">
+
+
+      <!-- <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-2"><img src="https://lh3.googleusercontent.com/-34SG-fESNBs/Wxfmyklex8I/AAAAAAAAQZE/pf7AzGaEImg3cjuHtDRR6vpdrMSpntkvACK8BGAs/s214/logo.png" alt="logo" height="110" width="200" style="border-radius: 50%"></div>
+        <div class="col-md-3"><h1 align="center" style="background-color: white; color: black; font-style: sans-serif">HANDY NEWS</h1></div>
+        <div class="col-md-4"></div>
+      </div>
+ -->
+ <h1 align="center" style="background-color: black; color: white; font-style: sans-serif">HANDY NEWS</h1>
+
+      <div class="container-fluid">
+        <b><div class="navbar-header">
+          <a class="navbar-brand" href="/" >Home</a>
+        </div>
+        <div class="navbar-header">
+          <a class="navbar-brand" href="/Business">Business</a>
+
+        </div>
+        <div class="navbar-header">
+          <a class="navbar-brand" href="/Entertainment">Entertainment</a>
+
+        </div>
+        <div class="navbar-header">
+          <a class="navbar-brand" href="/Health">Health</a>
+
+        </div>
+          <div class="navbar-header">
+          <a class="navbar-brand" href="/Science">Science</a>
+
+        </div>
+          <div class="navbar-header">
+          <a class="navbar-brand" href="/Sports">Sports</a>
+
+        </div>
+          <div class="navbar-header">
+          <a class="navbar-brand" href="/Technology">Technology</a>
+        </div></b>
+
+        <div>
+
+        {% if session.logged_in %}
+
+          <ul class="nav navbar-nav navbar-left">
+          <!-- <li><a href="/signup"><span ></span>signup</a></li> -->
+          {% if  session['subscription'] == 'False' %}
+
+              <li><a href="/subscribe" onclick="myFunction()"><span></span>Subscribe</a></li>
+              {% else %}
+              
+              <li><a href="/unsubscribe" onclick="myFunction2()"><span></span>Unsubscribe</a></li>
+
+
+          {% endif %}
+
+
+          <li><a href="/logout" onclick="signOut();" > <span ></span>Logout</a></li>
+        </ul>
+
+        {% else %}
+          <ul class="nav navbar-nav navbar-left">
+            <li><a class="navbar-brand" href="/signup"><span ></span>Signup</a></li>
+            <li><a class="navbar-brand" href="/login"><span ></span>Login</a></li>
+          </ul>
+        {% endif %}
+        <form class="nav navbar-nav navbar-left" method="post" id="search">
+                <div class="form">
+                <input type="text" class="searchbox form-control" value="" placeholder="search" onblur="if(this.value == '') { this.value = 'Type here..'; }" onfocus="if(this.value == 'Type here..') { this.value = ''; }" name="search">
+                <button type="submit" class="glyphicon glyphicon-search btn">Submit</button>
+            </form>
+            </div>
+        <button class="btn-xs navbar-right" id="micro" onclick="startConverting();"><i class="fa fa-microphone fa-3x" style="color: black;"></i></button>
+        </div>
+      </div>
+  </nav></div>
+<div class="row">
+
+</div>
+
+<div class="row">
+  <div class="col-md-1">
+
+  </div>
+  <div class="col-md-2" id="tex" align="center">
+    <div>
+      <div class="well"  style="padding-left: 10px; background-color: white; color: black;">
+        <b><h3 style="color: black;"><center>Welcome to Handy news</center></h3>
+        </b><br>
+        <label>
+          <span style="color: black;">Voice</span>
+          <select id="voiceOptions" style="width: 40%;"></select>
+        </label><br><br>
+        <label>
+          <span style="color: black;">Volume</span>
+          <input type="range" id="volumeSlider" min="0" max="1" value="1" step="0.1" />
+        </label><br>
+        <label>
+          <span style="color: black;">Rate</span>
+          <input type="range" id="rateSlider" min="0" max="1" value="0.5" step="0.1" />
+        </label><br>
+        <label>
+          <span style="color: black;">Pitch</span>
+          <input type="range" id="pitchSlider" min="0" max="2" value="2" step="0.1" />
+        </label><br><br>
+        <div class="btn" onclick="speakheadlines();" style="background-color: black; color: white">Read Headlines</div>
+        {% if session.logged_in %}
+
+        <div class="btn" onclick="speakpreferred();" style="background-color: black; color: white">Read preferred</div>
+        {% endif %}
+
+        <div class="btn" onclick="stop();" style="background-color: black; color: white">Stop</div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-5" align="center" >
+     {% if (session.logged_in) and (not session['subscription']) %}
+   <div class="alert alert-success alert-dismissible">
+   <button type="button" class="close" data-dismiss="alert">&times;</button>
+   <strong>You are logged in. Please subscribe to get notifications.</strong>
+ </div>
+ {% endif %}
+  	<h4>Tap on the microphone to give instructions</h4>
+    <br><br><br>
+     <div><button class="zoom" class="btn-lg" id="micro" onclick="startConverting();" style="border-radius: 90%; padding: 15%; border: solid;"><i class="fa fa-microphone fa-3x"></i></button></div>
+     <br><br>
+     <br><b>Voice Search</b>
+   </div>
+   <div class="col-md-3 well" style="background-color: white; color: black;">
+   	<h4><b>Instructions For Voice Search</b></h4>
+   	<ul><li><b>'Home'</b> redirects to Home Page.</li>
+   		<li><b>'Headlines'</b> reads the headlines of that page.</li>
+   		<li><b>'Stop'</b> to stop reading the headlines.</li>
+   		<li><b>'Business'</b> redirects to the Business page.</li>
+   		<li><b>'Entertainment'</b> redirects to the Entertainment page.</li>
+   		<li><b>'Health'</b> redirects to the Health page.</li>
+   		<li><b>'Science'</b> redirects to the Science page.</li>
+   		<li><b>'Sports'</b> redirects to the Sports page.</li>
+   		<li><b>'Technology'</b> redirects to the Technology page.</li>
+   		<li><b>'Search followed by a keyword'</b> searches for the news related to the keyword and displays it.</li>
+      <li><b>'Sign in'</b> redirects to the Sign in page.</li>
+      <li><b>'Login'</b> redirects to the Login page.</li>
+
+   	</ul>
+   </div>
+   <div class="col-md-1"></div>
+  </div> <br><br>
+  <div class="row">
+    <div class="col-md-1"></div>
+    <div class="col-md-5 well">
+    	{% if session['logged_in'] %}
+    	<h2><b>RECOMMENDED FOR YOU</b></h2>
+
+    	<br>
+    {% for item in resultsofbus %}
+
+        <div class="row" onclick="window.open('{{item[3]}}')">
+          <div class="col-md-3">
+            <img src={{item[4]}} width="120" height="100"></img></div>
+            <div class="col-md-9"><b>{{item[1]}}</b><br><li>{{item[2]}}</li><br><b>Published on: </b>{{item[5]}}</div></div>
+            <br><br>
+    {% endfor %}
+
+    {% else %}
+    <div>
+    <h2>Business</h2>
+
+          <div onclick="location.href='https://handynews.pythonanywhere.com/Business'">
+            <img src={{resultsofbus[1]}} width="200" height="150"></img>
+            <h5>{{resultsofbus[0]}}</h5>
+
+            </div>
+            <!-- <div class="col-md-2"></div> -->
+
+
+    </div>
+    <div>
+    <h2>Entertainment</h2>
+
+          <div onclick="location.href='https://handynews.pythonanywhere.com/Entertainment'">
+            <img src={{resultsofbus[3]}} width="200" height="150"></img>
+            <h5>{{resultsofbus[2]}}</h5>
+            </div>
+            <!-- <div class="col-md-2"></div> -->
+
+    </div>
+    <div>
+    <h2>Health</h2>
+
+          <div onclick="location.href='https://handynews.pythonanywhere.com/Health'">
+            <img src={{resultsofbus[5]}} width="200" height="150"></img>
+            <h5>{{resultsofbus[4]}}</h5>
+            </div>
+            <!-- <div class="col-md-2"></div> -->
+
+    </div>
+    <div>
+    <h2>Science</h2>
+
+          <div onclick="location.href='https://handynews.pythonanywhere.com/Science'" >
+            <img src={{resultsofbus[7]}} width="200" height="150"></img>
+            <h5>{{resultsofbus[6]}}</h5>
+            </div>
+            <!-- <div class="col-md-2"></div> -->
+
+    </div>
+    <div>
+    <h2>Sports</h2>
+
+          <div onclick="location.href='https://handynews.pythonanywhere.com/Sports'">
+            <img src={{resultsofbus[9]}} width="200" height="150"></img>
+            <h5>{{resultsofbus[8]}}</h5>
+            </div>
+            <!-- <div class="col-md-2"></div> -->
+
+    </div>
+    <div>
+    <h2>Technology</h2>
+
+          <div onclick="location.href='https://handynews.pythonanywhere.com/Technology'">
+            <img src={{resultsofbus[11]}} width="200" height="150"></img>
+            <h5>{{resultsofbus[10]}}</h5>
+
+            </div>
+            <!-- <div class="col-md-2"></div> -->
+
+    </div>
+
+
+    {% endif %}
+
+    <!-- <iframe width="425" height="300" src="https://www.youtube.com/embed/62rmi9KMvVE?rel=0&amp;showinfo=0" allow="autoplay; encrypted-media" allowfullscreen></iframe> -->
+  </div>
+
+  <div class="col-md-5 well">
+
+
+
+  <iframe src="https://tunein.com/embed/player/p577086/" style="width:100%; height:100px;" scrolling="no" frameborder="no"></iframe>
+  <div>
+  	<h2><b>HEADLINES</b></h2><br>
+  {% for item in results %}
+
+        <div class="row" onclick="window.open('{{item[3]}}')">
+          <div class="col-md-3">
+            <img src={{item[4]}} width="120" height="100"></img></div>
+          <div class="col-md-9"><b>{{item[1]}}</b><br><li>{{item[2]}}</li><br><b>Published on: </b>{{item[5]}}</div></div>
+        <br><br>
+  {% endfor %}
+  </div>
+<div class="col-md-1"></div>
+</div>
+
+<script type="text/javascript">
+      function checkCompatibilty () {
+        if(!('speechSynthesis' in window)){
+          alert('Your browser is not supported. If google chrome, please upgrade!!');
+        }
+      };
+
+      checkCompatibilty();
+
+      var voiceOptions = document.getElementById('voiceOptions');
+      var volumeSlider = document.getElementById('volumeSlider');
+      var rateSlider = document.getElementById('rateSlider');
+      var pitchSlider = document.getElementById('pitchSlider');
+      var voiceMap = [];
+      function loadVoices () {
+        var voices = speechSynthesis.getVoices();
+        for (var i = 0; i < voices.length; i++) {
+          var voice = voices[i];
+          var option = document.createElement('option');
+          option.value = voice.name;
+          option.innerHTML = voice.name;
+          voiceOptions.appendChild(option);
+          voiceMap[voice.name] = voice;
+        };
+      };
+
+      window.speechSynthesis.onvoiceschanged = function(e){
+        loadVoices();
+      };
+        function speakpreferred() {
+        console.log("hey.................................")
+
+        var msg = new SpeechSynthesisUtterance();
+        msg.volume = volumeSlider.value;
+        msg.voice = voiceMap[voiceOptions.value];
+        msg.rate = rateSlider.value;
+        msg.Pitch = pitchSlider.value;
+        msg.text = "Welcome to Handy news. preferred news are.."+ {{text2|tojson}}
+        window.speechSynthesis.speak(msg);
+    };
+
+      function speakheadlines() {
+        var msg = new SpeechSynthesisUtterance();
+        msg.volume = volumeSlider.value;
+        msg.voice = voiceMap[voiceOptions.value];
+        msg.rate = rateSlider.value;
+        msg.Pitch = pitchSlider.value;
+        msg.text = "Welcome to Handy news. todays headlines are.."+ {{text|tojson}}
+        window.speechSynthesis.speak(msg);
+    };
+      function speak(x){
+        var msg = new SpeechSynthesisUtterance();
+        msg.volume = volumeSlider.value;
+        msg.voice = voiceMap[voiceOptions.value];
+        msg.rate = rateSlider.value;
+        msg.Pitch = pitchSlider.value;
+        msg.text = x;
+        window.speechSynthesis.speak(msg);
+
+      };
+
+      function stop(){
+        var synth=window.speechSynthesis;
+        synth.cancel();
+      }
+
+      function startConverting () {
+        if('webkitSpeechRecognition' in window){
+          var speechRecognizer = new webkitSpeechRecognition();
+          speechRecognizer.continuous = false;
+          speechRecognizer.interimResults = false;
+          speechRecognizer.lang = 'en-IN';
+          speechRecognizer.start();
+
+          var finalTranscripts = '';
+
+          speechRecognizer.onresult = function(event){
+            var interimTranscripts = '';
+            for(var i = event.resultIndex; i < event.results.length; i++){
+              var transcript = event.results[i][0].transcript;
+              transcript.replace("\n", "<br>");
+              console.log("------Start-----")
+              if(event.results[i].isFinal){
+                 finalTranscripts += transcript;
+                // interimTranscripts += transcript;
+
+                 // console.log("$$$$ "+interimTranscripts +"added "+transcript)
+              }else{
+                interimTranscripts += transcript;
+                console.log("&&&& "+interimResults+ "added "+transcript)
+
+              }
+                            console.log("------end-----")
+
+            }
+            console.log("%%%%"+finalTranscripts)
+            interimTranscripts =finalTranscripts;
+
+            if(interimTranscripts=="Sports"||interimTranscripts=="sports"){
+              speak("redirecting to Sports");
+
+              window.location.href="/Sports";
+            }
+            else if(interimTranscripts=="Business"||interimTranscripts=="business"){
+              speak("redirecting to business");
+              window.location.href="/Business";
+            }
+            else if(interimTranscripts=="Entertainment"||interimTranscripts=="entertainment"){
+              speak("redirecting to Entertainment");
+              window.location.href="/Entertainment";
+            }
+            else if(interimTranscripts=="health"||interimTranscripts=="health"){
+              speak("redirecting to health");
+              window.location.href="/Health";
+            }
+            else if(interimTranscripts=="Science"||interimTranscripts=="science"){
+              speak("redirecting to Science");
+              window.location.href="/Science";
+            }
+            else if(interimTranscripts=="Technology"||interimTranscripts=="technology"){
+              speak("redirecting to Technology");
+              window.location.href="/Technology";
+            }
+            else if(interimTranscripts=="Home"||interimTranscripts=="home"){
+              speak("redirecting to home");
+              window.location.href="/";
+            }
+            else if(interimTranscripts.search("search")!=-1){
+                if(interimTranscripts.length>6){
+
+              var splitofvar=interimTranscripts;
+              var splitofvar2=splitofvar.slice(7);
+              speak("redirecting to"+splitofvar2+"news");
+
+              window.location.href="/voicesearch"+"/"+splitofvar2;
+}
+
+
+            }
+            else if(interimTranscripts=="Headlines"||interimTranscripts=="headlines"){
+              speakheadlines();
+            }
+            else if(interimTranscripts=="stop"||interimTranscripts=="Stop"){
+              stop();
+            }
+
+            else if(interimTranscripts=="sign up"||interimTranscripts=="signup"){
+            	console.log("------entered-----")
+            	{% if not session['logged_in'] %}
+            	speak("redirecting to signup page,please enter your information");
+            	window.location.href="/signup";
+            	{% endif %}
+            }
+            else if(interimTranscripts=="login"||interimTranscripts=="Login"){
+            	{% if not session['logged_in'] %}
+              speak("redirecting to login page,please enter your information");
+            	window.location.href="/login";
+            	{% endif %}
+            }
+             else if(interimTranscripts=="logout"||interimTranscripts=="Logout"){
+            	{% if session['logged_in'] %}
+              speak("Thank you.You are logged out");
+            	window.location.href="/logout";
+            	{% endif %}
+            }
+
+
+
+          };
+          speechRecognizer.onerror = function (event) {
+          };
+        }else{
+          r.innerHTML = 'Your browser is not supported. If google chrome, please upgrade!';
+        }
+      }
+
+    </script>
+    <script type="text/javascript">
+$(".searchbox").autocomplete({
+    source: function(request, response) {
+        console.log(request.term);
+        $.ajax({
+            url: "http://en.wikipedia.org/w/api.php",
+            dataType: "jsonp",
+            data: {
+                'action': "opensearch",
+                'format': "json",
+                'search': request.term
+            },
+            success: function(data) {
+                response(data[1]);
+            }
+        });
+    }
+});
+</script>
+<script>
+function myFunction() {
+    alert("You are subscribed");
+}
+</script>
+<script>
+  function myFunction2(){
+    alert("You are unsubscribed");
+  }
+</script>
+<script type="text/javascript">
+
+  function signOut() {
+
+
+
+
+
+    console.log("i entered");
+    var auth2 = gapi.auth2.getAuthInstance();
+
+
+
+    auth2.signOut().then(function () {
+      console.log('User signed out.');
+
+
+
+    });
+  }
+      function onLoad() {
+
+
+
+      gapi.load('auth2', function() {
+        gapi.auth2.init();
+
+
+
+
+      });
+
+    }
+</script>
+
+
+
+</body>
+</html>
